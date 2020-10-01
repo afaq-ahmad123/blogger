@@ -15,7 +15,8 @@ class BlogListCreateAPI(generics.ListCreateAPIView):
     authentication_classes = (TokenAuthentication, )
 
     def get_queryset(self):
-        self.queryset = Blogs.objects.filter(author=self.request.user)
+        self.queryset = Blogs.objects.all()
+            # .filter(author=self.request.user)
         return super(BlogListCreateAPI, self).get_queryset()
 
 
