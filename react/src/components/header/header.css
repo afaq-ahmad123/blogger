@@ -1,0 +1,21 @@
+/* .mb-50 {
+    margin-bottom: 100px;
+} */
+
+nav.navbar {
+    background-color: darkblue;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    height: 10%;
+    border-bottom: solid 5px;
+}
+  
+a, a:hover{
+    color: #FFF !important;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.selected {
+    color: yellow !important ;
+}
