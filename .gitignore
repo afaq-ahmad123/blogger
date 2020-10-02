@@ -1,5 +1,5 @@
 env/
 .idea/
-react/node_modules
+node_modules
 *.pyc
-.png
+*.png
