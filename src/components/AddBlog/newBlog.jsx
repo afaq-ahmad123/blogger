@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, FormGroup, Input, Button, Label } from 'reactstrap';
-import axios from 'axios';
 import {useHistory} from 'react-router-dom'
+import API from '../api';
 
 
 export default function Blog() {
@@ -15,21 +15,14 @@ export default function Blog() {
         evt.preventDefault();
         console.log(evt.target.img);
         let form_data = new FormData();
-        // form_data.append('header', .image, this.state.image.name);
-        let data = {'header': evt.target.name.value,
-                    'description': evt.target.content.value,
-                    'image': evt.target.img.value}
         form_data.append('header', evt.target.name.value);
         form_data.append('description', evt.target.content.value);
         form_data.append('image', image, image.name);
         console.log(form_data);
-        let url = 'blog/';
-        axios.post(`blog/`, form_data, { 
-            method: 'POST',
+        API.post(`blog/`, form_data, { 
             headers: {
                 'content-type': 'multipart/form-data',
                 accept: 'application/json',
-                'Authorization': `token d0a161f7b30d204f79a2d749bc0668b81eb98be2`,
             }
             }).then(res => {
                 console.log(res.data);

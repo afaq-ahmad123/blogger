@@ -8,8 +8,8 @@ import './home.css';
 export default function Item(props){
     let element = props.element;
     let desc = element.description;
-    if(desc.length > 45) {
-        desc = desc.substring(0, 45);
+    if(desc.length > 43 ) {
+        desc = desc.substring(0, 43);
         desc = desc + '...';
     }
     let title = element.header;

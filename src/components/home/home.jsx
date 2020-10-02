@@ -3,8 +3,8 @@ import { Container, Row,
           Col, ListGroup, ListGroupItem 
         } from 'reactstrap';
 import './home.css';
-import axios from 'axios';
 import {connect} from 'react-redux';
+import API from '../api';
 import Item from './item';
 
 
@@ -18,22 +18,13 @@ class Home extends Component {
             list: []
         }
     }
-    
-    // detail(element){
-    //     console.log(this.props);
-    //     this.props.addSelected(element);
-    // }
 
     componentDidMount() {
         window.scrollTo(0, 0);
         let data_1, response=[];
         console.log(this.statedata);
-        axios.get(`blog/`, {
-            headers: {
-                'Authorization': `token f5a254322465b9b5915f73bb34ff802a3f98f963`,
-            },
-            })
-            .then(res => {
+        API.get(`blog/`).then(res => {
+                console.log(res);
                 data_1 = res.data.map((element)=>{
                     response.push(<ListGroupItem >
                                      <div className='img-div'>
@@ -56,7 +47,7 @@ class Home extends Component {
     }
     
     render() {
-        return (<div>
+        return (this.state.data)?(<div>
                 <Container className='.container'>
                     <Row>
                         <Col xs='12' sm='8' md='9' lg='9'>
@@ -72,7 +63,7 @@ class Home extends Component {
                         </Col>
                     </Row>
                 </Container>
-            </div>);
+            </div>):(<div>No Blog Found</div>);
     }
 }
 
