@@ -71,7 +71,8 @@ export default function Blog() {
     }
 
     return (<div>
-        <h2 className='text-center'>ADD NEW BLOG</h2>
+        <h2 className='text-center'>{edit?(<div>Edit BLOG</div>)
+        :(<div>ADD NEW BLOG</div>)}</h2>
         <Form name='newform' className='blog-form' onSubmit={handleSubmit}>
             <FormGroup>
                 <Label>Blog Name</Label>
