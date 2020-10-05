@@ -11,7 +11,6 @@ import Item from './item';
 class Home extends Component {
     constructor(props){
         super(props);
-        console.log(props.data, props.list);
         this.state = {
             data: [],
             list: []
@@ -27,7 +26,6 @@ class Home extends Component {
         })
 
         API.get(`blog/`).then(res => {
-                console.log(res);
                 data_1 = res.data.map((element)=>{
                     response.push(<ListGroupItem >
                                      <div className='img-div'>
@@ -50,7 +48,7 @@ class Home extends Component {
     }
     
     render() {
-        return (this.state.data)?(<div>
+        return this.state.data?(<div>
                 <Container className='.container'>
                     <Row>
                         <Col xs='12' sm='8' md='9' lg='9'>
@@ -66,7 +64,9 @@ class Home extends Component {
                         </Col>
                     </Row>
                 </Container>
-            </div>):(<div>No Blog Found</div>);
+            </div>)
+            :
+            (<div>No Blog Found</div>);
     }
 }
 
