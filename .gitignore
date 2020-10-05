@@ -2,4 +2,4 @@ env/
 .idea/
 node_modules
 *.pyc
-*.png
+static/*.png
