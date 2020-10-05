@@ -1,0 +1,13 @@
+footer {
+    width: 100%;
+    background-color: darkblue;
+    height: 130px;
+    /* position: fixed; */
+    padding: 10px;
+    bottom: 0%;
+    border-radius: 2px;
+}
+
+footer p {
+    color: #FFF !important;
+}

@@ -1,0 +1,58 @@
+.hist {
+    display: inline-flex;
+    padding-left: 10px;
+    word-break: break-all;
+    font-size: 19px !important;
+}
+
+.img-div {
+    width: 50px;
+    height: 40px;
+    display: inline-block;
+}
+
+.detail{
+    padding-left: 8%;
+    padding-right: 10%;
+    text-indent: 50px;
+}
+
+.detail>p{
+    text-indent: 20%;
+}
+
+.detail>h1{
+    text-align: center;
+}
+
+.detail>h6{
+    text-align: center;
+}
+
+.edit-btn {
+    margin-left: 50% !important;
+    margin-bottom: 20px;
+}
+
+.card {
+    margin-bottom: 20px !important;
+    border: solid rgb(108, 120, 128) 3px !important;
+    padding: 5px;
+    border-radius: 10px !important;
+}
+
+small {
+
+}
+
+.list_group {
+    border: solid rgb(108, 120, 128) 3px !important;
+    background-color: white;
+    border-radius: 10px !important;
+}
+
+.blog-form {
+    width: 80%;
+    padding-left: 10%;
+    padding-bottom: 17px;
+}
