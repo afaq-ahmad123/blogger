@@ -28,6 +28,12 @@
 .detail>h6{
     text-align: center;
 }
+
+.edit-btn {
+    margin-left: 50% !important;
+    margin-bottom: 20px;
+}
+
 .card {
     margin-bottom: 20px !important;
     border: solid rgb(108, 120, 128) 3px !important;

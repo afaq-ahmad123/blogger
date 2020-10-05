@@ -18,3 +18,12 @@ class UserAPI(generics.RetrieveUpdateDestroyAPIView):
     def get_queryset(self):
         self.queryset = User.objects.filter(username=self.request.user.username)
         return super(UserAPI, self).get_queryset()
+
+
+class UserGet(generics.ListAPIView):
+    queryset = None
+    serializer_class = UserSerializer
+
+    def get_queryset(self):
+        self.queryset = User.objects.filter(username=self.request.user.username)
+        return super(UserGet, self).get_queryset()

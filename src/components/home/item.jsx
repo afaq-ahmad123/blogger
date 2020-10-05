@@ -22,7 +22,7 @@ export default function Item(props){
     let history = useHistory();
 
     const handleClick = ()=>{
-        dispatch({type:'AddS', data:element});
+        dispatch({type:'AddSelected', data:element});
         history.push('detail/');
     }
     

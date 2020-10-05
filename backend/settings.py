@@ -29,7 +29,8 @@ SECRET_KEY = '@qy8s)zuvf=l=u6150up@b&d!p(d78h7&vu!sy@gm+)nwsmd^m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['blog-fullstack-react.herokuapp.com', 'http://localhost:5000/',
+                 'http://localhost:3000/']
 
 
 # Application definition

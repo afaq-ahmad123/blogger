@@ -11,7 +11,6 @@ import Item from './item';
 class Home extends Component {
     constructor(props){
         super(props);
-
         console.log(props.data, props.list);
         this.state = {
             data: [],
@@ -22,7 +21,11 @@ class Home extends Component {
     componentDidMount() {
         window.scrollTo(0, 0);
         let data_1, response=[];
-        console.log(this.statedata);
+
+        API.get('user/').then(res => {
+            this.props.addUser(res.data[0]);
+        })
+
         API.get(`blog/`).then(res => {
                 console.log(res);
                 data_1 = res.data.map((element)=>{
@@ -76,7 +79,7 @@ const mapStatetoProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addSelected: (data) =>{dispatch({type:'AddS', data: data})},
+        addUser: (data) =>{dispatch({type:'addUser', data: data})},
         addData: (data) => {dispatch({type:'Data', data:data})}
     }
 }
