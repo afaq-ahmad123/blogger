@@ -4,3 +4,4 @@ node_modules
 *.pyc
 static/*.png
 env1/
+static
