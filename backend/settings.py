@@ -93,7 +93,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIR = [
     os.path.join(BASE_DIR, 'build/static'),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'build/staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'build/static')
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 MEDIA_URL = '/images/'
