@@ -113,12 +113,16 @@ REST_FRAMEWORK = {
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {}
-if 'HEROKU_ENV' in os.environ:
-    DATABASES["default"] = dj_database_url.config(
-        ssl_require=True,
-    )
-else:
+
+DATABASES = {
+        'default': {
+            dj_database_url.config(
+                ssl_require=True,
+            )
+        }
+}
+
+if 'HEROKU_ENV' not in os.environ:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
