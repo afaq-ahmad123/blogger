@@ -29,6 +29,6 @@ urlpatterns = [
     path('rest-auth/', include('rest_auth.urls')),
     path('rest-auth/facebook/', FacebookSocialAuthView.as_view()),
     path('rest-auth/registration', include('rest_auth.registration.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIR)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += re_path('.*', TemplateView.as_view(template_name='index.html')),
