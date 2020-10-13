@@ -115,11 +115,11 @@ REST_FRAMEWORK = {
 
 
 DATABASES = {
-        'default': {
+        'default': [
             dj_database_url.config(
                 ssl_require=True,
             )
-        }
+        ]
 }
 
 if 'HEROKU_ENV' not in os.environ:
