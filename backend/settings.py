@@ -37,6 +37,8 @@ ALLOWED_HOSTS = ['blog-fullstack-react.herokuapp.com', 'http://localhost:8000/',
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
+    'user_account',
+    'blogs',
     'django.contrib.admin',
     'django.contrib.auth',
     'rest_framework.authtoken',
@@ -50,8 +52,6 @@ INSTALLED_APPS = [
     'allauth',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'user_account',
-    'blogs',
 ]
 
 MIDDLEWARE = [
@@ -113,20 +113,23 @@ REST_FRAMEWORK = {
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blog2',
-        'USER': 'dbadmin',
-        'PASSWORD': '12345',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-    }
-}
+DATABASES = {}
 if 'HEROKU_ENV' in os.environ:
     DATABASES["default"] = dj_database_url.config(
         ssl_require=True,
     )
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'blog2',
+            'USER': 'dbadmin',
+            'PASSWORD': '12345',
+            'HOST': '127.0.0.1',
+            'PORT': '3306',
+        }
+    }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
