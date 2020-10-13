@@ -21,6 +21,7 @@ export default function Detail() {
     return (Object.keys(blog).length>0) ? (<div className='detail'>
                 <h1>{blog.header}</h1>
                 <h6>Written By {blog.author.toUpperCase()}</h6>
+                <img alt='Blog' height={350} width={950} src={blog.image}></img>
                 <h3>Content:</h3>
                 <p>{blog.description}</p>
                 {blog.author === username?

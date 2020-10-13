@@ -6,6 +6,7 @@ import './home.css';
 import {connect} from 'react-redux';
 import API from '../api';
 import Item from './item';
+import { Redirect } from 'react-router-dom';
 
 
 class Home extends Component {
@@ -20,6 +21,11 @@ class Home extends Component {
     componentDidMount() {
         window.scrollTo(0, 0);
         let data_1, response=[];
+        let token = localStorage.getItem('token');
+        console.log(this.props.token);
+        if(token === null){
+            return
+        }
 
         API.get('user/').then(res => {
             this.props.addUser(res.data[0]);
@@ -48,7 +54,7 @@ class Home extends Component {
     }
     
     render() {
-        return this.state.data?(<div>
+        return (this.props.token!==null)?(<div>
                 <Container className='.container'>
                     <Row>
                         <Col xs='12' sm='8' md='9' lg='9'>
@@ -66,14 +72,15 @@ class Home extends Component {
                 </Container>
             </div>)
             :
-            (<div>No Blog Found</div>);
+            (<Redirect to='login/'></Redirect>);
     }
 }
 
 const mapStatetoProps = (state) => {
     return {
         statedata: state.data,
-        list: state.list
+        list: state.list,
+        token: state.token,
     }
 }
 

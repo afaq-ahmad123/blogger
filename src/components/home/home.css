@@ -41,8 +41,12 @@
     border-radius: 10px !important;
 }
 
-small {
-
+.login{
+    width: 30% !important;
+    /* text-align: center; */
+    /* padding-left: 20%; */
+    margin-bottom: 30px;
+    margin-left: 30%;
 }
 
 .list_group {

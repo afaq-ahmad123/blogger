@@ -2,14 +2,13 @@ import React, {useEffect} from 'react';
 import { Form, FormGroup, Input, Button, Label } from 'reactstrap';
 import {useHistory} from 'react-router-dom'
 import API from '../api';
-import {useSelector, useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 
 
 export default function Blog() {
 
     let history = useHistory(); 
 
-    let dispatch = useDispatch();
     const selector = useSelector;
     let values = {'header':'',
                     'description':'',
@@ -21,7 +20,7 @@ export default function Blog() {
         let file = document.getElementsByName('img');
         file.filename = values.image;
     }
-    useEffect(()=>{
+    useEffect((dispatch, edit)=>{
         return() => {
             if (edit){
                 dispatch({type:'edit', data:false});

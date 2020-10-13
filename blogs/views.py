@@ -6,7 +6,6 @@ from .models import Blogs
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 from django.shortcuts import get_object_or_404
-
 # Create your views here.
 
 

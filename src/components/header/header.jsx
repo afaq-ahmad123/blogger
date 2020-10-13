@@ -2,8 +2,16 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, NavItem } from 'reactstrap';
 import './header.css';
+import {logout} from '../../store/actions/auth';
+import {connect} from 'react-redux';
 
-export default class Header extends Component {
+
+class Header extends Component {
+
+
+    handleLogout = ()=>{
+        this.props.logout();
+    }
 
     render(){
         return (
@@ -17,8 +25,8 @@ export default class Header extends Component {
                         <NavItem>
                             <Link href='/add' to='/add'>Add Blog</Link>
                         </NavItem>
-                        <NavItem>
-                            <Link href='/detail' to='/detail'>About</Link>
+                        <NavItem onClick={this.handleLogout}>
+                            <Link to='login/'>Logout</Link>
                         </NavItem>
 
                     </Nav>
@@ -27,3 +35,16 @@ export default class Header extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) =>{
+    return {}
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        logout: () => dispatch(logout())
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
