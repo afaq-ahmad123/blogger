@@ -113,26 +113,23 @@ REST_FRAMEWORK = {
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+DATABASES = {}
 
-DATABASES = {
-        'default': [
-            dj_database_url.config(
+DATABASES['default'] = dj_database_url.config(
                 ssl_require=True,
             )
-        ]
-}
 
-if 'HEROKU_ENV' not in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'blog2',
-            'USER': 'dbadmin',
-            'PASSWORD': '12345',
-            'HOST': '127.0.0.1',
-            'PORT': '3306',
-        }
-    }
+# if 'HEROKU_ENV' not in os.environ:
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'blog2',
+#         'USER': 'dbadmin',
+#         'PASSWORD': '12345',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3306',
+#     }
+# }
 
 
 # Password validation
