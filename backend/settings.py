@@ -90,7 +90,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 STATIC_URL = '/static/'
-STATICFILES_DIR = os.path.join(BASE_DIR, 'build/static'),
+STATICFILES_DIR = os.path.join(BASE_DIR, 'build/static')
 STATIC_ROOT = os.path.join(BASE_DIR, 'build/static')
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
