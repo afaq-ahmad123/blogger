@@ -29,7 +29,7 @@ class Login extends Component {
             auth_token : token
         }
         let res = await axios.post(
-            "http://127.0.0.1:8000/rest-auth/facebook/",data, {
+            "https://blog-fullstack-react.herokuapp.com/rest-auth/facebook/",data, {
                     headers:{
                         'Content-Type': 'application/json',}
                 }
