@@ -21,10 +21,10 @@ class UserManager(BaseUserManager):
         email = self.normalize_email(email)
         user = self.model(username=username, email=email, **extra_fields)
         user.set_password(password)
-        user.save()
+        user.save(using=self.db)
         return user
 
-    def create_user(self, extra_fields):
+    def create_auth_user(self, extra_fields):
         username = extra_fields['username']
         password = extra_fields['password']
         name = extra_fields['name']
@@ -49,11 +49,11 @@ class UserManager(BaseUserManager):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
         extra_fields.setdefault('is_active', True)
-
+        print(extra_fields)
         if extra_fields.get('is_superuser') is not True:
             raise ValueError('Superuser must be set')
-        if extra_fields.get('is_staff') is not True:
-            raise ValueError('Staff must be set')
+        # if extra_fields.get('is_staff') is not True:
+        #     raise ValueError('Staff must be set')
 
         return self.create_user(username, email, password, **extra_fields)
 

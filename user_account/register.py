@@ -43,7 +43,7 @@ def register_social_user(provider, user_id, name):
             'provider': provider,
             'password': settings.SOCIAL_AUTH_FACEBOOK_SECRET[0:10]}
         print(user)
-        user = User.objects.create_user(user)
+        user = User.objects.create_auth_user(user)
         # user.is_active = True
         # user.is_staff = True
         # user.auth_provider = provider
