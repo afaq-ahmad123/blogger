@@ -10,6 +10,7 @@ import '../home/home.css';
 import * as actions from '../../store/actions/auth' 
 import Facebook from './fb_login';
 import axios from 'axios';
+import {api} from '../api';
 
 
 class Login extends Component {
@@ -28,8 +29,8 @@ class Login extends Component {
         let data = {
             auth_token : token
         }
-        let res = await axios.post(
-            "https://blog-fullstack-react.herokuapp.com/rest-auth/facebook/",data, {
+        let res = await api.post(
+            "rest-auth/facebook/",data, {
                     headers:{
                         'Content-Type': 'application/json',}
                 }

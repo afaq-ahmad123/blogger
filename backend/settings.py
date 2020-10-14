@@ -114,23 +114,23 @@ REST_FRAMEWORK = {
 
 # if 'HEROKU_ENV' not in os.environ:
 
-DATABASES = {
-    'default':
-        {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'blog2',
-            'USER': 'dbadmin',
-            'PASSWORD': '12345',
-            'HOST': '127.0.0.1',
-            'PORT': '3306',
-        }
-}
-
 # DATABASES = {
-#     'default' : dj_database_url.config(
-#         conn_max_age=600, ssl_require=True
-#     )
+#     'default':
+#         {
+#             'ENGINE': 'django.db.backends.mysql',
+#             'NAME': 'blog2',
+#             'USER': 'dbadmin',
+#             'PASSWORD': '12345',
+#             'HOST': '127.0.0.1',
+#             'PORT': '3306',
+#         }
 # }
+
+DATABASES = {
+    'default': dj_database_url.config(
+        conn_max_age=600, ssl_require=True
+    )
+}
 # if 'HEROKU_ENV' in os.environ:
     # DATABASES["default"] =
 

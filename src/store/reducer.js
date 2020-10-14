@@ -33,7 +33,6 @@ function Reducer(state=initialState, action){
                 loading: true
             })
         case actionTypes.AUTH_SUCCESS: 
-            console.log('success login');
             return Object.assign({}, state, {
                 token: action.token,
                 error: null,

@@ -22,7 +22,7 @@ class Home extends Component {
         window.scrollTo(0, 0);
         let data_1, response=[];
         let token = localStorage.getItem('token');
-        console.log(this.props.token);
+        console.log(token);
         if(token === null){
             return
         }

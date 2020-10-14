@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as actionTypes from './actionTypes';
+import {api} from '../../components/api'
 
 export const authStart = () => {
     return {
@@ -40,12 +41,11 @@ export const checkAuthTimeout = expirationTime => {
 export const authLogin = (username, password) => {
     return dispatch => {
         // dispatch(authStart());
-        axios.post('https://blog-fullstack-react.herokuapp.com/rest-auth/login/', {
+        api.post('rest-auth/login/', {
             username: username,
             password: password
         })
         .then(res => {
-            console.log(res.data);
             const token = res.data.key;
             const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
 
@@ -68,7 +68,7 @@ export const authLogin = (username, password) => {
 export const authSignup = (username, email, password1, password2) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post('https://blog-fullstack-react.herokuapp.com/rest-auth/registration/', {
+        api.post('rest-auth/registration/', {
             username: username,
             email: email,
             password1: password1,

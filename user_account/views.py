@@ -21,7 +21,6 @@ class FacebookSocialAuthView(generics.GenericAPIView):
         Send an access token as from facebook to get user information
         """
         serializer = self.serializer_class(data=request.data)
-        # print(serializer)
         serializer.is_valid(raise_exception=True)
         data = ((serializer.validated_data)['auth_token'])
         return Response(data, status=status.HTTP_200_OK)

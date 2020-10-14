@@ -47,7 +47,6 @@ export default function Blog() {
                     accept: 'application/json',
                 }
                 }).then(res => {
-                    console.log(res.data);
                     history.push('/')
                 })
                 .catch(err => console.log(err))
