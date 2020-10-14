@@ -126,20 +126,24 @@ REST_FRAMEWORK = {
 #         }
 # }
 
+# DATABASES = {
+#     'default':
+#         {'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'HOST': 'localhost',
+#         'USER': 'afaq',
+#         'PASSWORD': 'arbisoft',
+#         'PORT': '5432',
+#          }
+# }
+
 DATABASES = {
-    'default':
-        {'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'HOST': 'localhost',
-        'USER': 'afaq',
-        'PASSWORD': 'arbisoft',
-        'PORT': '5432',
-         }
-}
-if 'HEROKU_ENV' in os.environ:
-    DATABASES["default"] = dj_database_url.config(
+    'default' : dj_database_url.config(
         ssl_require=True,
     )
+}
+# if 'HEROKU_ENV' in os.environ:
+    # DATABASES["default"] =
 
 
 # Password validation
